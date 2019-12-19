@@ -248,6 +248,18 @@ namespace ConsoleApp5
             Console.WriteLine("Votre alliage est composé de " + pourcentage1 + "% de " + stringMetal1 + " et " + pourcentage2 + "% de " + stringMetal2);
             Console.ForegroundColor = ConsoleColor.White;
 
+            string nomAlloy = "";
+
+            if(pourcentage1>pourcentage2)
+                nomAlloy = tabOres[metal1 - 1].nom + tabOres[metal2 - 1].nom[0];
+            else
+                nomAlloy = tabOres[metal2 - 1].nom + tabOres[metal1 - 1].nom[0];
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\nVotre alliage se nomme : " + nomAlloy);
+            Console.ForegroundColor = ConsoleColor.White;
+
+
             double resistanceAlloy1, resistanceAlloy2, resistanceAlloyFinal = 0;
             if (metal1 == 1)
             {
